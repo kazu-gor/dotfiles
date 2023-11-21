@@ -1,0 +1,28 @@
+{
+  "load_extensions": {
+    "highlighter/highlighter": false,
+    "addbefore/main": false,
+    "highlight_selected_word/main": false,
+    "hinterland/hinterland": true,
+    "code_prettify/code_prettify": false,
+    "livemdpreview/livemdpreview": true,
+    "code_prettify/autopep8": false,
+    "scratchpad/main": true,
+    "help_panel/help_panel": false,
+    "qtconsole/qtconsole": false,
+    "jupyterlab-plotly/extension": true,
+    "hide_header/main": false,
+    "skip-traceback/main": true,
+    "snippets/main": false,
+    "snippets_menu/main": false,
+    "spellchecker/main": true,
+    "toc2/main": true,
+    "varInspector/main": true,
+    "vim_binding/vim_binding": true,
+    "nbextensions_configurator/config_menu/main": true
+  },
+  "hinterland": {
+    "enable_at_start": false,
+    "hint_inside_comments": false
+  }
+}

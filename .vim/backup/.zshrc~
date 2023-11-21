@@ -1,0 +1,119 @@
+# deno
+export DENO_INSTALL="/home/$USER/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# 表示
+export PS1=' %n '$PS1
+# alias
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"
+alias python="python3"
+alias p="python3"
+alias k="kubectl"
+alias watch="watch -d "
+alias ls="ls -F --color=auto"
+alias sl="ls -F --color=auto"
+alias lsa="ls -Fa --color=auto"
+alias ll="ls -l"
+alias a="cd ../"
+alias aa="cd ../../"
+alias aaa="cd ../../../"
+alias aaaa="cd ../../../../"
+alias g="git"
+alias ga="git add"
+alias gd="git diff"
+alias gs="git status"
+alias gc="git commit -m"
+alias gp="git pull"
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias du="du -h"
+alias dc="docker-compose"
+alias m="mkdir -p"
+
+# 大文字小文字を無視
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# 補完の設定
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+zstyle ':completion:*' menu select
+
+
+# # pure, zshの見た目
+autoload -U promptinit; promptinit
+prompt pure
+
+# fzf は曖昧検索してくれるやつ
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+#  途中までの履歴を表示できるやつ
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search
+
+# default bindkey
+bindkey "^a" beginning-of-line 
+bindkey "^e" end-of-line
+bindkey "^f" forward-char
+bindkey "^b" backward-char 
+bindkey "^k" kill-line
+bindkey "^h" vi-backward-delete-char
+bindkey "^d" delete-char
+
+# <C-w>押した時、/と.で止まるようにする
+# https://unix.stackexchange.com/questions/250690/how-to-configure-ctrlw-as-delete-word-in-zsh
+my-backward-delete-word() {
+    local WORDCHARS=${WORDCHARS/\//}
+    local WORDCHARS=${WORDCHARS/\./}
+    zle backward-delete-word
+}
+zle -N my-backward-delete-word
+bindkey '^W' my-backward-delete-word
+
+# cdした時にlsaを実行
+chpwd() {
+    if [[ $(pwd) != $HOME ]]; then;
+        lsa
+    fi
+}
+
+# 補完機能を有効にする
+autoload -Uz compinit && compinit
+
+# 小文字でも大文字ディレクトリ、ファイルを補完できるようにする
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+#  ヒストリー系
+HISTFILE=${HOME}/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
+setopt NOCORRECT
+setopt AUTO_CD
+setopt AUTO_PARAM_KEYS
+setopt NO_BEEP

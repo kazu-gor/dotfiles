@@ -1,0 +1,6 @@
+all: init brew link
+
+init:
+	bash init.sh
+link:
+	bash link.sh
