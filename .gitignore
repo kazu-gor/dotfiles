@@ -1,0 +1,14 @@
+/* files */
+cp.sh
+paste.sh
+.DS_Store
+.zsh_history
+.swp
+
+/* dirs */
+pack/
+script/
+autoload/
+python3/
+session/
+
