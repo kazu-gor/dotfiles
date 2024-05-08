@@ -1,0 +1,37 @@
+# Insert your preferred key mappings here.
+
+unmapAll
+
+map j scrollDown
+map k scrollUp
+map gg scrollToTop
+map G scrollToBottom
+map <c-u> scrollPageUp
+map <c-d> scrollPageDown
+map r reload
+map v enterVisualMode
+map f LinkHints.activateMode
+map F LinkHints.activateModeToOpenInNewTab
+map gf nextFrame
+map gF mainFrame
+
+# Using the vomnibar
+
+map b Vomnibar.activateBookmarks
+map / enterFindMode
+map n performFind
+map N performBackwardsFind
+
+# Navigating history
+
+map h goBack
+map l goForward
+
+# Manipulating tabs
+
+map yt duplicateTab
+map x removeTab
+
+# Miscellaneous
+
+map ? showHelp
