@@ -13,6 +13,8 @@ local packer_bootstrap = ensure_packer()
 
 --plugin
 require("packer").startup(function(use)
+    -- lazy.nvim
+    use 'folke/lazy.nvim'
     -- plugin manager
     use 'wbthomason/packer.nvim'
     use 'neovim/nvim-lspconfig'
