@@ -11,14 +11,10 @@ require("nvim-tree").setup({
         sorter = "case_sensitive",
     },
     view = {
-        -- width = 40,
         width = '20%',
         side = 'right',
         signcolumn = 'yes',
     },
-    -- renderer = {
-    --     group_empty = true,
-    -- },
     renderer = {
         highlight_git = true,
         highlight_opened_files = 'name',
