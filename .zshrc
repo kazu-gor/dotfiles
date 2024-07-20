@@ -125,7 +125,7 @@ bindkey '^W' my-backward-delete-word
 # cdした時にlsaを実行
 chpwd() {
     if [[ $(pwd) != $HOME ]]; then;
-        lsa
+        ls -al
     fi
 }
 
