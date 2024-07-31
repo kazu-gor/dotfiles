@@ -22,8 +22,6 @@ export PS1=' %n '$PS1
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
-# alias python="python3"
-# alias p="python3"
 alias k="kubectl"
 alias watch="watch -d "
 alias ll="ls -l"
@@ -41,19 +39,12 @@ alias gd="git diff"
 alias gs="git status"
 alias gc="git commit -m"
 alias gp="git pull"
-alias gacp='git add ./ && git commit -m "fix" && git push'
+alias gt="git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -h"
-alias dc="docker-compose"
 alias m="mkdir -p"
-alias labpy="cd ~/git/laboratory/python/py/"
-alias lab="cd ~/git/laboratory/"
-alias murano="cd ~/git/murano_program/TransFuse/"
-alias trunk="cd ~/git/TRUNK/"
-alias pst='cd ~/git/laboratory/python/py/patch-selection-transformer/'
-alias detr='cd ~/git/laboratory/python/py/detr/'
 
 # colordiff
 if [[ -x `which colordiff` ]]; then
