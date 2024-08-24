@@ -39,7 +39,8 @@ alias gd="git diff"
 alias gs="git status"
 alias gc="git commit -m"
 alias gp="git pull"
-alias gt="git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"
+alias gsw="git switch"
+alias gt='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
@@ -151,3 +152,5 @@ setopt NO_BEEP
 export MODULAR_HOME="/Users/kazu-gor/.modular"
 export PATH="/Users/kazu-gor/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
