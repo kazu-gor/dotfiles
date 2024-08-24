@@ -59,14 +59,14 @@ require("lazy").setup({
     { 'vim-jp/vimdoc-ja' },
 
     -- markdown preview
-    { 'iamcco/markdown-preview.nvim', build = 'cd app && yarn install' },
+    { 'iamcco/markdown-preview.nvim',        build = 'cd app && yarn install' },
 
     -- copilot
     { 'github/copilot.vim' },
     { "zbirenbaum/copilot.lua" },
 
     -- smooth cursor
-    { 'gen740/SmoothCursor.nvim', config = function() require('smoothcursor').setup() end },
+    { 'gen740/SmoothCursor.nvim',            config = function() require('smoothcursor').setup() end },
 
     -- easymotion
     { 'easymotion/vim-easymotion' },
@@ -82,20 +82,40 @@ require("lazy").setup({
 
     -- nvim-tree
     {
-      "nvim-tree/nvim-tree.lua",
-      version = "*",
-      lazy = false,
-      dependencies = {
-        "nvim-tree/nvim-web-devicons",
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+    },
+
+    -- toggleterm
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+
+    -- lazygit
+     {
+      "kdheepak/lazygit.nvim",
+      cmd = {
+        "LazyGit",
+        "LazyGitConfig",
+        "LazyGitCurrentFile",
+        "LazyGitFilter",
+        "LazyGitFilterCurrentFile",
       },
-      config = function()
-        require("nvim-tree").setup {}
-      end,
-    }
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+      },
+    },
+
+    -- diffview
+    { "sindrets/diffview.nvim" }
 })
 
 
 if lazy_bootstrap then
     require('lazy').sync()
 end
-
