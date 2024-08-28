@@ -11,8 +11,8 @@ require("nvim-tree").setup({
         sorter = "case_sensitive",
     },
     view = {
-        width = '20%',
-        side = 'right',
+        width = '15%',
+        side = 'left',
         signcolumn = 'yes',
     },
     renderer = {
@@ -21,8 +21,8 @@ require("nvim-tree").setup({
         icons = {
           glyphs = {
             git = {
-              unstaged = '!', renamed = '»', untracked = '?', deleted = '✘',
-              staged = '✓', unmerged = '', ignored = '◌',
+              unstaged = '🟡', renamed = '»', untracked = '?', deleted = '✘',
+              staged = '🔴', unmerged = '', ignored = '◌',
             },
           },
         },
