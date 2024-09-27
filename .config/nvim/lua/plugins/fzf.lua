@@ -5,7 +5,7 @@ vim.cmd "let g:fzf_preview_window = ['right:70%', 'ctrl-/']"
 vim.g.mapleader = " "
 local opt = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<leader>e', "<cmd>lua require('fzf-lua').files()<CR>", opt)
-vim.api.nvim_set_keymap('n', '<leader>g', "<cmd>lua require('fzf-lua').git_status()<CR>", opt)
+vim.api.nvim_set_keymap('n', '<leader>G', "<cmd>lua require('fzf-lua').git_status()<CR>", opt)
 vim.api.nvim_set_keymap('n', '<leader>p', "<cmd>lua require('fzf-lua').live_grep()<CR>", opt)
 vim.api.nvim_set_keymap('n', '<leader>h', "<cmd>lua require('fzf-lua').oldfiles()<CR>", opt)
 vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>", opt)
