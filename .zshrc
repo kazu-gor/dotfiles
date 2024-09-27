@@ -1,27 +1,8 @@
-# puppeteer
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-# gloud
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-# deno
-export DENO_INSTALL="/home/$USER/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-# kubernetes
-export KUBE_EDITOR="nvim"
-export EDITOR="nvim"
-
-# nodebrew
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-# python3 
-export PATH="/opt/homebrew/bin:$PATH"
-
 # 表示
 export PS1=' %n '$PS1
 # alias
 alias vi="nvim"
 alias vim="nvim"
-alias view="nvim -R"
 alias k="kubectl"
 alias watch="watch -d "
 alias ll="ls -l"
@@ -46,6 +27,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -h"
 alias m="mkdir -p"
+alias o="open ."
 
 # colordiff
 if [[ -x `which colordiff` ]]; then
@@ -149,8 +131,27 @@ setopt NOCORRECT
 setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
 setopt NO_BEEP
+
+# forgit
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
+
 export MODULAR_HOME="/Users/kazu-gor/.modular"
 export PATH="/Users/kazu-gor/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# puppeteer
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+# gloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# deno
+export DENO_INSTALL="/home/$USER/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+# kubernetes
+export KUBE_EDITOR="nvim"
+export EDITOR="nvim"
+# nodebrew
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+# python3 
+export PATH="/opt/homebrew/bin:$PATH"
 
-[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
