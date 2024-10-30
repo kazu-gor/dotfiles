@@ -14,6 +14,10 @@ ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/tagbar.lua ~/.config/nvim
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/tree.lua ~/.config/nvim/lua/plugins/tree.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/diffview.lua ~/.config/nvim/lua/plugins/diffview.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/toggleterm.lua ~/.config/nvim/lua/plugins/toggleterm.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config/lazy.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/options.lua ~/.config/nvim/lua/options.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/keymaps.lua ~/.config/nvim/lua/keymaps.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/autocmd.lua ~/.config/nvim/lua/autocmd.lua
 
 ln -fnsv ~/migration/dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
 
