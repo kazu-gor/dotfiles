@@ -13,9 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('config.lazy')
 require('plugins.lsp')
+require('plugins.easymotion')
 
 if not vim.g.vscode then
-    require('plugins.easymotion')
     require('plugins.jumpcursor')
     require('plugins.sneak')
     require('plugins.gitgutter')
