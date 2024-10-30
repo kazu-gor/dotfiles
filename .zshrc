@@ -103,6 +103,37 @@ chpwd() {
     fi
 }
 
+function select-git-switch() {
+  target_br=$(
+    git branch -a |
+      fzf --exit-0 --layout=reverse --info=hidden --no-multi --preview-window="right,65%" --prompt="CHECKOUT BRANCH > " --preview="echo {} | tr -d ' *' | xargs git lgn --color=always" |
+      head -n 1 |
+      perl -pe "s/\s//g; s/\*//g; s/remotes\/origin\///g"
+  )
+  if [ -n "$target_br" ]; then
+    BUFFER="git switch $target_br"
+    zle accept-line
+  fi
+}
+zle -N select-git-switch
+bindkey "^b" select-git-switch # 「control + G」で実行
+
+# エラーだったら.zsh_historyに追加しない
+__update_history() {
+  local last_status="$?"
+
+  local HISTFILE=~/.zsh_history
+  fc -W
+  if [[ ${last_status} -ne 0 ]]; then
+    ed -s ${HISTFILE} <<EOF >/dev/null
+d
+w
+q
+EOF
+  fi
+}
+precmd_functions+=(__update_history)
+
 # 補完機能を有効にする
 autoload -Uz compinit && compinit
 
@@ -136,14 +167,13 @@ setopt NO_BEEP
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 
 export MODULAR_HOME="/Users/kazu-gor/.modular"
-export PATH="/Users/kazu-gor/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # puppeteer
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 # gloud
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+# source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # deno
 export DENO_INSTALL="/home/$USER/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -154,4 +184,5 @@ export EDITOR="nvim"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 # python3 
 export PATH="/opt/homebrew/bin:$PATH"
-
+# color
+export CLICOLOR=1
