@@ -21,9 +21,74 @@ require("lazy").setup({
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
 
-    -- airline
-    { 'vim-airline/vim-airline' },
-    { 'vim-airline/vim-airline-themes' },
+    -- telescope
+    {
+      'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
+    -- color themes
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+
+    -- lualine
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    -- nvim-notify
+    { 'rcarriga/nvim-notify' },
+
+    -- noice
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+      },
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+        }
+    },
+
+    -- flash
+    {
+      "folke/flash.nvim",
+      event = "VeryLazy",
+      -- @type Flash.Config
+      opts = {},
+      -- stylua: ignore
+      keys = {
+        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      },
+    },
+
+    -- bufferline
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons'
+    },
+
+    -- nvim-window-picker
+    {
+        's1n7ax/nvim-window-picker',
+        name = 'window-picker',
+        event = 'VeryLazy',
+        version = '2.*',
+        config = function()
+            require'window-picker'.setup()
+        end,
+    },
 
     -- color scheme
     { 'cocopon/iceberg.vim' },
@@ -65,9 +130,6 @@ require("lazy").setup({
     { 'github/copilot.vim' },
     { "zbirenbaum/copilot.lua" },
 
-    -- smooth cursor
-    { 'gen740/SmoothCursor.nvim',            config = function() require('smoothcursor').setup() end },
-
     -- easymotion
     { 'easymotion/vim-easymotion' },
 
@@ -80,17 +142,28 @@ require("lazy").setup({
     -- fugitive
     { 'tpope/vim-fugitive' },
 
-    -- nvim-tree
+    -- -- nvim-tree
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     version = "*",
+    --     lazy = false,
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     config = function()
+    --         require("nvim-tree").setup {}
+    --     end,
+    -- },
+
+    -- neo-tree
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
         dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("nvim-tree").setup {}
-        end,
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons",
+          "MunifTanjim/nui.nvim",
+        }
     },
 
     -- toggleterm

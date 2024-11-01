@@ -40,3 +40,7 @@ vim.api.nvim_set_keymap("", ",w", ":<C-u>e $HOME/.zshrc<CR>", { silent = true })
 -- change current directory to the file directory
 vim.api.nvim_set_keymap("", '<leader><leader>', ':<C-u>cd %:h<CR>', {noremap = true})
 vim.api.nvim_set_keymap("n", '<leader><leader>', ':<C-u>cd %:h<CR>', {noremap = true})
+
+-- terminal
+vim.api.nvim_set_keymap("n", "tt", ":<C-u>terminal<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "tx", ":<C-u>belowright new<CR>:<C-u>terminal<CR>", {noremap = true})
