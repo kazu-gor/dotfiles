@@ -1,16 +1,16 @@
--- Ensure lazy.nvim is installed
-local ensure_lazy = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/lazy.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', install_path })
-        vim.cmd [[packadd lazy.nvim]]
-        return true
-    end
-    return false
-end
+-- -- Ensure lazy.nvim is installed
+-- local ensure_lazy = function()
+--     local fn = vim.fn
+--     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/lazy.nvim'
+--     if fn.empty(fn.glob(install_path)) > 0 then
+--         fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', install_path })
+--         vim.cmd [[packadd lazy.nvim]]
+--         return true
+--     end
+--     return false
+-- end
 
-local lazy_bootstrap = ensure_lazy()
+-- local lazy_bootstrap = ensure_lazy()
 
 -- lazy.nvim plugin list
 require("lazy").setup({
