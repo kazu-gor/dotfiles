@@ -23,22 +23,23 @@ require("lazy").setup({
 
     -- telescope
     {
-      'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     -- color themes
     {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
     },
 
     -- lualine
     {
-      'nvim-lualine/lualine.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' }
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
     -- nvim-notify
@@ -46,30 +47,30 @@ require("lazy").setup({
 
     -- noice
     {
-      "folke/noice.nvim",
-      event = "VeryLazy",
-      opts = {
-      },
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+        },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
         }
     },
 
     -- flash
     {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      -- @type Flash.Config
-      opts = {},
-      -- stylua: ignore
-      keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-      },
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        -- @type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+        },
     },
 
     -- bufferline
@@ -86,7 +87,7 @@ require("lazy").setup({
         event = 'VeryLazy',
         version = '2.*',
         config = function()
-            require'window-picker'.setup()
+            require 'window-picker'.setup()
         end,
     },
 
@@ -160,9 +161,9 @@ require("lazy").setup({
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons",
-          "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
         }
     },
 
@@ -170,18 +171,18 @@ require("lazy").setup({
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
     -- lazygit
-     {
-      "kdheepak/lazygit.nvim",
-      cmd = {
-        "LazyGit",
-        "LazyGitConfig",
-        "LazyGitCurrentFile",
-        "LazyGitFilter",
-        "LazyGitFilterCurrentFile",
-      },
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-      },
+    {
+        "kdheepak/lazygit.nvim",
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
 
     -- diffview

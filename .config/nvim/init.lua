@@ -14,9 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require('config.lazy')
 require('plugins.lsp')
 require('plugins.easymotion')
-require('plugins.telescope')
 
 if not vim.g.vscode then
+    require('plugins.telescope')
     require('plugins.nvim-window-picker')
     require('plugins.noice')
     require('plugins.bufferline')
