@@ -1,1 +1,1 @@
-vim.cmd 'let g:airline_theme = "iceberg"'
+-- vim.cmd 'let g:airline_theme = "iceberg"'
