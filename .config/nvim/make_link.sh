@@ -14,6 +14,14 @@ ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/tagbar.lua ~/.config/nvim
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/tree.lua ~/.config/nvim/lua/plugins/tree.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/diffview.lua ~/.config/nvim/lua/plugins/diffview.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/toggleterm.lua ~/.config/nvim/lua/plugins/toggleterm.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/bufferline.lua ~/.config/nvim/lua/plugins/bufferline.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/tokyonight.lua ~/.config/nvim/lua/plugins/tokyonight.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/telescope.lua ~/.config/nvim/lua/plugins/telescope.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/nvim-window-picker.lua ~/.config/nvim/lua/plugins/nvim-window-picker.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/nvim-notify.lua ~/.config/nvim/lua/plugins/nvim-notify.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/noice.lua ~/.config/nvim/lua/plugins/noice.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/neo-tree.lua ~/.config/nvim/lua/plugins/neo-tree.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins/lualine.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config/lazy.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/options.lua ~/.config/nvim/lua/options.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/keymaps.lua ~/.config/nvim/lua/keymaps.lua
