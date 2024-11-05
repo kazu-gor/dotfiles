@@ -33,6 +33,12 @@ yabai -m config window_gap                   06
 yabai -m rule --add app="zoom.us" manage=off
 # line
 yabai -m rule --add app="LINE" manage=off
+# iTerm
+yabai -m rule --add app="iTerm" manage=off
+# Cursor
+yabai -m rule --add app="Cursor" manage=off
+# Finder
+yabai -m rule --add app="Finder" manage=off
 
 # restore position of floating windows when they are manually unfloated
 # ~/Scripts/yabai_restore.sh
