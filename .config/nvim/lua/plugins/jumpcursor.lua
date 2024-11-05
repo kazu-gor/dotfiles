@@ -1,2 +1,2 @@
--- vim.g.mapleader = " "
--- vim.api.nvim_set_keymap('n', '[j', '<Plug>(jumpcursor-jump)', { noremap = false, silent = true })
+vim.g.mapleader = " "
+vim.api.nvim_set_keymap('n', '<leader>j', '<Plug>(jumpcursor-jump)', { noremap = false, silent = true })

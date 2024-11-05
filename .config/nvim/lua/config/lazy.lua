@@ -1,17 +1,3 @@
--- -- Ensure lazy.nvim is installed
--- local ensure_lazy = function()
---     local fn = vim.fn
---     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/lazy.nvim'
---     if fn.empty(fn.glob(install_path)) > 0 then
---         fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', install_path })
---         vim.cmd [[packadd lazy.nvim]]
---         return true
---     end
---     return false
--- end
-
--- local lazy_bootstrap = ensure_lazy()
-
 -- lazy.nvim plugin list
 require("lazy").setup({
     -- plugin manager
@@ -21,13 +7,12 @@ require("lazy").setup({
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
 
-    -- telescope
     {
-      'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-    -- color themes
     {
       "folke/tokyonight.nvim",
       lazy = false,
@@ -35,16 +20,20 @@ require("lazy").setup({
       opts = {},
     },
 
-    -- lualine
     {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
-    -- nvim-notify
-    { 'rcarriga/nvim-notify' },
+    {
+        'rcarriga/nvim-notify'
+    },
 
-    -- noice
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
+
     {
       "folke/noice.nvim",
       event = "VeryLazy",
@@ -56,7 +45,8 @@ require("lazy").setup({
         }
     },
 
-    -- flash
+    { "skanehira/jumpcursor.vim" },
+
     {
       "folke/flash.nvim",
       event = "VeryLazy",
@@ -72,14 +62,12 @@ require("lazy").setup({
       },
     },
 
-    -- bufferline
     {
         'akinsho/bufferline.nvim',
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons'
     },
 
-    -- nvim-window-picker
     {
         's1n7ax/nvim-window-picker',
         name = 'window-picker',
@@ -90,13 +78,10 @@ require("lazy").setup({
         end,
     },
 
-    -- color scheme
     { 'cocopon/iceberg.vim' },
 
-    -- fzf-lua
     { 'ibhagwan/fzf-lua' },
 
-    -- nvim-cmp
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-buffer" },
@@ -109,37 +94,27 @@ require("lazy").setup({
     { "f3fora/cmp-spell" },
     { "uga-rosa/cmp-dictionary" },
 
-    -- commentary
     { 'tpope/vim-commentary' },
 
-    -- highlight
     { 'machakann/vim-highlightedyank' },
 
-    -- surround
     { 'cohama/lexima.vim' },
     { 'machakann/vim-sandwich' },
     { 'tpope/vim-surround' },
 
-    -- textDocument
     { 'vim-jp/vimdoc-ja' },
 
-    -- markdown preview
     { 'iamcco/markdown-preview.nvim',        build = 'cd app && yarn install' },
 
-    -- copilot
     { 'github/copilot.vim' },
     { "zbirenbaum/copilot.lua" },
 
-    -- easymotion
     { 'easymotion/vim-easymotion' },
 
-    -- tagbar
     { 'preservim/tagbar' },
 
-    -- gitgutter
     { 'airblade/vim-gitgutter' },
 
-    -- fugitive
     { 'tpope/vim-fugitive' },
 
     -- -- nvim-tree

@@ -89,16 +89,16 @@ nvim_lsp.pyright.setup {
     }
 }
 
--- LSP diagnostics format
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  update_in_insert = false,
-  virtual_text = {
-    format = function(diagnostic)
-      if diagnostic.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
-        return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
-      else
-        return 'Warning'
-      end
-    end,
-  },
-})
+-- -- LSP diagnostics format
+-- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--   update_in_insert = false,
+--   virtual_text = {
+--     format = function(diagnostic)
+--       if diagnostic.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
+--         return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
+--       else
+--         return 'Warning
+--       end
+--     end,
+--   },
+-- })

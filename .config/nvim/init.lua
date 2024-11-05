@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('config.lazy')
 require('plugins.lsp')
-require('plugins.easymotion')
-require('plugins.telescope')
 
 if not vim.g.vscode then
     require('plugins.nvim-window-picker')
@@ -23,19 +21,19 @@ if not vim.g.vscode then
     require('plugins.lualine')
     require('plugins.nvim-notify')
     require('plugins.jumpcursor')
-    require('plugins.sneak')
     require('plugins.gitgutter')
     require('plugins.completion')
     require('plugins.fugitive')
     require('plugins.copilot')
     require('plugins.tagbar')
-    require('plugins.fzf')
     require('plugins.neo-tree')
     require('plugins.toggleterm')
     require('plugins.diffview')
     require('plugins.tokyonight')
 end
 
+require('plugins.nvim-treesitter')
+require('plugins.telescope')
 require('options')
 require('autocmd')
 require('keymaps')
