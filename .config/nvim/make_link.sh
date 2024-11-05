@@ -22,6 +22,7 @@ ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/nvim-notify.lua ~/.config
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/noice.lua ~/.config/nvim/lua/plugins/noice.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/neo-tree.lua ~/.config/nvim/lua/plugins/neo-tree.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins/lualine.lua
+ln -fnsv ~/migration/dotfiles/.config/nvim/lua/plugins/nvim-treesitter.lua ~/.config/nvim/lua/plugins/nvim-treesitter.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config/lazy.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/options.lua ~/.config/nvim/lua/options.lua
 ln -fnsv ~/migration/dotfiles/.config/nvim/lua/keymaps.lua ~/.config/nvim/lua/keymaps.lua
