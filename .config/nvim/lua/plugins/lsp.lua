@@ -1,25 +1,3 @@
--- Configure `ruff-lsp`
-require('lspconfig').ruff_lsp.setup {
-    init_options = {
-        settings = {
-            args = {},
-        }
-    }
-}
-
-require('lspconfig').pyright.setup {
-    settings = {
-        pyright = {
-            disableOrganizeImports = true,
-        },
-        python = {
-            analysis = {
-                ignore = { '*' },
-            },
-        },
-    },
-}
-
 -- lsp setup
 require('mason').setup()
 require("mason-lspconfig").setup()
@@ -58,6 +36,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help, { separator = true }
 )
+
 local nvim_lsp = require('lspconfig')
 nvim_lsp.pylsp.setup {
     cmg = { "pylsp" },
@@ -77,6 +56,9 @@ nvim_lsp.pyright.setup {
     cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
     settings = {
+        pyright = {
+            disableOrganizeImports = true,
+        },
         python = {
             analysis = {
                 autoSearchPaths = true,
@@ -89,16 +71,16 @@ nvim_lsp.pyright.setup {
     }
 }
 
--- -- LSP diagnostics format
--- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
---   update_in_insert = false,
---   virtual_text = {
---     format = function(diagnostic)
---       if diagnostic.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
---         return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
---       else
---         return 'Warning
---       end
---     end,
---   },
--- })
+-- LSP diagnostics format
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  update_in_insert = false,
+  virtual_text = {
+    format = function(diagnostic)
+      if diagnostic.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
+        return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
+      else
+        return string.format('%s (%s: %s)', diagnostic.message, diagnostic.source, diagnostic.code)
+      end
+    end,
+  },
+})

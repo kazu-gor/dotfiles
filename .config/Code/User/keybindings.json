@@ -63,13 +63,6 @@
 "command": "list.select",
 "when": "listFocus && !inputFocus"
 },
-// init.vimの読み込み
-{
-"command": "vscode-neovim.compositeEscape1",
-"key": "j",
-"when": "neovim.mode == insert && editorTextFocus",
-"args": "j"
-},
 {
 "key": "ctrl+cmd+r",
 "command": "workbench.action.reloadWindow",

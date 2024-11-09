@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- vim.api.nvim_set_keymap('n', '<leader>GG', ':<C-u>Git<CR>', { noremap = true })
 -- vim.api.nvim_set_keymap('n', '<leader>GC', ':<C-u>Git commit<CR>', { noremap = true })

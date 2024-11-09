@@ -10,7 +10,12 @@ require("lazy").setup({
     {
       'nvim-telescope/telescope.nvim',
       tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+      cmd = { 'Telescope' },
+    },
+
+    {
+        'nvim-lua/plenary.nvim',
+        lazy = true
     },
 
     {
@@ -31,7 +36,9 @@ require("lazy").setup({
 
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
+        build = ":TSUpdate",
+        event = "BufRead",
+        lazy = true,
     },
 
     {
@@ -45,7 +52,10 @@ require("lazy").setup({
         }
     },
 
-    { "skanehira/jumpcursor.vim" },
+    {
+        "skanehira/jumpcursor.vim",
+        event = "VeryLazy",
+    },
 
     {
       "folke/flash.nvim",
@@ -78,11 +88,10 @@ require("lazy").setup({
         end,
     },
 
-    { 'cocopon/iceberg.vim' },
-
-    { 'ibhagwan/fzf-lua' },
-
-    { "hrsh7th/nvim-cmp" },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+    },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-cmdline" },
@@ -94,43 +103,25 @@ require("lazy").setup({
     { "f3fora/cmp-spell" },
     { "uga-rosa/cmp-dictionary" },
 
-    { 'tpope/vim-commentary' },
+    { 'tpope/vim-commentary', event = 'VeryLazy' },
 
-    { 'machakann/vim-highlightedyank' },
+    { 'machakann/vim-highlightedyank', event = 'VeryLazy' },
 
-    { 'cohama/lexima.vim' },
     { 'machakann/vim-sandwich' },
-    { 'tpope/vim-surround' },
 
-    { 'vim-jp/vimdoc-ja' },
+    { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
 
-    { 'iamcco/markdown-preview.nvim',        build = 'cd app && yarn install' },
+    {
+        'iamcco/markdown-preview.nvim',
+        build = 'cd app && yarn install',
+        cmd = 'MarkdownPreview',
+    },
 
     { 'github/copilot.vim' },
     { "zbirenbaum/copilot.lua" },
 
-    { 'easymotion/vim-easymotion' },
-
     { 'preservim/tagbar' },
 
-    { 'airblade/vim-gitgutter' },
-
-    { 'tpope/vim-fugitive' },
-
-    -- -- nvim-tree
-    -- {
-    --     "nvim-tree/nvim-tree.lua",
-    --     version = "*",
-    --     lazy = false,
-    --     dependencies = {
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    --     config = function()
-    --         require("nvim-tree").setup {}
-    --     end,
-    -- },
-
-    -- neo-tree
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -141,11 +132,13 @@ require("lazy").setup({
         }
     },
 
-    -- toggleterm
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
 
-    -- lazygit
-     {
+    {
       "kdheepak/lazygit.nvim",
       cmd = {
         "LazyGit",
@@ -159,8 +152,10 @@ require("lazy").setup({
       },
     },
 
-    -- diffview
-    { "sindrets/diffview.nvim" }
+    {
+        "sindrets/diffview.nvim",
+        cmd = "DiffviewOpen",
+    }
 })
 
 
