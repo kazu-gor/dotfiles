@@ -1,11 +1,9 @@
-require('telescope').setup{
-  defaults = {
-    find_command = {'rg', '--files', '--hidden', '--glob', '!.git/*'}
-  }
-}
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>e', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>e', function()
+  builtin.find_files({ hidden = true })
+end, { desc = 'Telescope find files (including hidden)' })
+
 vim.keymap.set('n', '<leader>E', builtin.git_files, { desc = 'Telescope git files' })
 vim.keymap.set('n', '<leader>p', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope buffers' })

@@ -12,9 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('config.lazy')
-require('plugins.lsp')
 
 if not vim.g.vscode then
+    require('plugins.lsp')
     require('plugins.nvim-window-picker')
     require('plugins.noice')
     require('plugins.bufferline')
@@ -30,10 +30,10 @@ if not vim.g.vscode then
     require('plugins.toggleterm')
     require('plugins.diffview')
     require('plugins.tokyonight')
+    require('plugins.telescope')
 end
 
-require('plugins.nvim-treesitter')
-require('plugins.telescope')
+-- require('plugins.nvim-treesitter')
 require('options')
 require('autocmd')
 require('keymaps')
